@@ -1,0 +1,17 @@
+{
+  "Biathlon": [212, 250],
+  "Bobsleigh": [161, 200],
+  "Skeleton": [50, 100],
+  "Curling": [120, 150],
+  "Ice hockey": [0, 250],
+  "Luge": [106, 150],
+  "Figure skating": [148, 150],
+  "Short track speed skating": [112, 150],
+  "Speed skating": [207, 250],
+  "Alpine skiing": [302, 350],
+  "Cross-country skiing": [294, 350],
+  "Freestyle skiing": [277, 250],
+  "Nordic combined": [55, 100],
+  "Ski jumping": [104, 150],
+  "Snowboarding": [236, 200]
+}

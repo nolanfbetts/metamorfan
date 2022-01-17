@@ -1,0 +1,19 @@
+{
+  "Attributes": {
+    "Biathlon": { "Men": [], "Women": [] },
+    "Bobsleigh": { "Men": [], "Women": [] },
+    "Skeleton": { "Men": [], "Women": [] },
+    "Curling": { "Men": [], "Women": [] },
+    "Ice hockey": { "Men": [], "Women": [] },
+    "Luge": { "Men": [], "Women": [] },
+    "Figure skating": { "Men": [], "Women": [] },
+    "Short track speed skating": { "Men": [], "Women": [] },
+    "Speed skating": { "Men": [], "Women": [] },
+    "Alpine skiing": { "Men": [], "Women": [] },
+    "Cross-country skiing": { "Men": [], "Women": [] },
+    "Freestyle skiing": { "Men": [], "Women": [] },
+    "Nordic combined": { "Men": [], "Women": [] },
+    "Ski jumping": { "Men": [], "Women": [] },
+    "Snowboarding": { "Men": [], "Women": [] }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "Biathlon": [
+    "Mixed 4x6 km relay",
+    "Women's 15 km individual",
+    "Men's 20 km individual",
+    "Women's 7.5 km sprint",
+    "Men's 10 km sprint",
+    "Women's 10 km pursuit",
+    "Men's 12.5 km pursuit",
+    "Men's 4 x 7.5 km relay",
+    "Women's 4 x 6 km relay",
+    "Men's 15 km mass start",
+    "Women's 12.5 km mass start"
+  ],
+  "Bobsleigh": ["Women's Monobob", "Two-Man", "Two-Woman", "Four-Man"],
+  "Skeleton": ["Men's", "Women's"],
+  "Curling": ["Men", "Women", "Mixed Doubles"],
+  "Ice hockey": ["Men's", "Women's"],
+  "Luge": ["Men's Singles", "Women's Singles", "Men's Doubles", "Team Relay"],
+  "Figure skating": [
+    "Men's Singles",
+    "Women's Singles",
+    "Pair Skating",
+    "Ice Dance",
+    "Team"
+  ],
+  "Short track speed skating": [
+    "Men's 500 Metres",
+    "Men's 1000 Metres",
+    "Men's 1500 Metres",
+    "Men's 5000 Metres",
+    "Women's 500 Metres",
+    "Women's 1000 Metres",
+    "Women's 1500 Metres",
+    "Women's 3000 Metres",
+    "Mixed 2000 Metre Relay"
+  ],
+  "Speed skating": [
+    "Women's 3000 Metres",
+    "Men's 5000 Metres",
+    "Women's 1500 Metres",
+    "Men's 1500 Metres",
+    "Women's 5000 Metres",
+    "Men's 10,000 Metres",
+    "Men's 500 Metres",
+    "Women's 500 Metres",
+    "Men's Team Pursuit",
+    "Women's Team Pursuit",
+    "Women's 1000 Metres",
+    "Men's 1000 Metres",
+    "Men's Mass Start",
+    "Women's Mass Start"
+  ],
+  "Alpine skiing": [
+    "Men's Downhill",
+    "Women's Giant Slalom",
+    "Men's Super-G",
+    "Women's Slalom",
+    "Men's Combines",
+    "Women's Super-G",
+    "Men's Giant Slalom",
+    "Women's Downhill",
+    "Men's Slalom",
+    "Women's Combined",
+    "Team Event"
+  ],
+  "Cross-country skiing": [
+    "Women's Skiathlon",
+    "Men's Skiathlon",
+    "Men's Individual Sprint Freestyle",
+    "Women's Individual Sprint Freestyle",
+    "Women's 10km Classical",
+    "Men's 15km Classical",
+    "Women's 4x5 km Relay",
+    "Men's 4x10 km Relay",
+    "Men's Team Sprint Freestyle",
+    "Women's Team Sprint Freestyle",
+    "Men's 50km Mass Start Freestyle",
+    "Women's 30km Mass Start Freestyle"
+  ],
+  "Freestyle skiing": [
+    "Men's Moguls",
+    "Women's Moguls",
+    "Women's Big Air",
+    "Men's Big Air",
+    "Mixed Team Aerials",
+    "Women's Ski Slopestyle",
+    "Women's Aerials",
+    "Men's Ski Slopestyle",
+    "Men's Aerials",
+    "Women's Ski Cross",
+    "Women's Ski Halfpipe",
+    "Men's Ski Cross",
+    "Men's Ski Halfpipe"
+  ],
+  "Nordic combined": [
+    "Men's Individual Normal Hill/10km",
+    "Men's Individual Large Hill/10km",
+    "Men's Team Large Hill/4x5 km"
+  ],
+  "Ski jumping": [
+    "Women's Individual Normal Hill",
+    "Men's Individual Normal Hill",
+    "Mixed Team Normal Hill",
+    "Men's Individual Large Hill",
+    "Men's Team Large Hill"
+  ],
+  "Snowboarding": [
+    "Women's Slopestyle",
+    "Men's Slopestyle",
+    "Women's Parallel Giant Slalom",
+    "Men's Parallel Giant Slalom",
+    "Women's Snowboard Cross",
+    "Women's Halfpipe",
+    "Men's Snowboard Cross",
+    "Men's Halfpipe",
+    "Mixed Team Snowboard Cross",
+    "Women's Big Air",
+    "Men's Big Air"
+  ]
+}
