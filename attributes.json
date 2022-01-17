@@ -1,19 +1,166 @@
 {
   "Attributes": {
-    "Biathlon": { "Men": [], "Women": [] },
-    "Bobsleigh": { "Men": [], "Women": [] },
-    "Skeleton": { "Men": [], "Women": [] },
-    "Curling": { "Men": [], "Women": [] },
-    "Ice hockey": { "Men": [], "Women": [] },
-    "Luge": { "Men": [], "Women": [] },
-    "Figure skating": { "Men": [], "Women": [] },
-    "Short track speed skating": { "Men": [], "Women": [] },
-    "Speed skating": { "Men": [], "Women": [] },
-    "Alpine skiing": { "Men": [], "Women": [] },
-    "Cross-country skiing": { "Men": [], "Women": [] },
-    "Freestyle skiing": { "Men": [], "Women": [] },
-    "Nordic combined": { "Men": [], "Women": [] },
-    "Ski jumping": { "Men": [], "Women": [] },
-    "Snowboarding": { "Men": [], "Women": [] }
+    "Biathlon": {
+      "Men": [
+        "beanie",
+        "rifle",
+        "sunglasses",
+        "ski",
+        "ski.boots",
+        "ski.poles",
+        "spandex1"
+      ],
+      "Women": [
+        "beanie",
+        "rifle",
+        "sunglasses",
+        "ski",
+        "ski.boots",
+        "ski.poles",
+        "spandex1"
+      ]
+    },
+    "Bobsleigh": {
+      "Men": ["bobsled", "bobsled.outfit", "shield.helmet"],
+      "Women": ["bobsled", "bobsled.outfit", "shield.helmet"]
+    },
+    "Skeleton": {
+      "Men": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"],
+      "Women": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"]
+    },
+    "Curling": {
+      "Men": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"],
+      "Women": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"]
+    },
+    "Ice hockey": {
+      "Men": ["black.skates", "hockey.outfit", "hockey.equipment"],
+      "Women": ["black.skates", "hockey.outfit", "hockey.equipment"]
+    },
+    "Luge": {
+      "Men": ["shield.helmet", "luge.sled", "spandex3", "shoes"],
+      "Women": ["shield.helmet", "luge.sled", "spandex3", "shoes"]
+    },
+    "Figure skating": {
+      "Men": ["ice.skates", "ice.skating.pants"],
+      "Women": ["ice.skates", "ice.skating.dress"]
+    },
+    "Short track speed skating": {
+      "Men": ["spandex4", "black.skates"],
+      "Women": ["spandex4", "white.skates"]
+    },
+    "Speed skating": {
+      "Men": ["spandex1", "white.skates"],
+      "Women": ["spandex1", "black.skates"]
+    },
+    "Alpine skiing": {
+      "Men": [
+        "spandex2",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.helmet",
+        "ski.boots",
+        "ski.poles"
+      ],
+      "Women": [
+        "spandex2",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.helmet",
+        "ski.boots",
+        "ski.poles"
+      ]
+    },
+    "Cross-country skiing": {
+      "Men": [
+        "spandex3",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.poles",
+        "beanie",
+        "sunglasses"
+      ],
+      "Women": [
+        "spandex3",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.poles",
+        "beanie",
+        "sunglasses"
+      ]
+    },
+    "Freestyle skiing": {
+      "Men": [
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.helmet",
+        "ski.boots",
+        "ski.poles",
+        "ski.outfit"
+      ],
+      "Women": [
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.helmet",
+        "ski.boots",
+        "ski.poles",
+        "ski.outfit"
+      ]
+    },
+    "Nordic combined": {
+      "Men": [
+        "spandex4",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.helmet"
+      ],
+      "Women": [
+        "spandex4",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.helmet"
+      ]
+    },
+    "Ski jumping": {
+      "Men": [
+        "spandex1",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.helmet"
+      ],
+      "Women": [
+        "spandex1",
+        "goggles",
+        "mittens",
+        "ski",
+        "ski.boots",
+        "ski.helmet"
+      ]
+    },
+    "Snowboarding": {
+      "Men": [
+        "goggles",
+        "ski.helmet",
+        "snowboard.outfit",
+        "snowboarding.equipment"
+      ],
+      "Women": [
+        "goggles",
+        "ski.helmet",
+        "snowboard.outfit",
+        "snowboarding.equipment"
+      ]
+    }
   }
 }
