@@ -1,0 +1,173 @@
+{
+  "Events": {
+    "Biathlon": {
+      "Male": [
+        "Men's 20 km individual",
+        "Men's 10 km sprint",
+        "Men's 12.5 km pursuit",
+        "Men's 4 x 7.5 km relay",
+        "Men's 15 km mass start",
+        "Mixed 4x6 km relay"
+      ],
+      "Female": [
+        "Women's 15 km individual",
+        "Women's 7.5 km sprint",
+        "Women's 10 km pursuit",
+        "Women's 4 x 6 km relay",
+        "Women's 12.5 km mass start",
+        "Mixed 4x6 km relay"
+      ]
+    },
+    "Bobsleigh": {
+      "Male": ["Two-Man", "Four-Man"],
+      "Female": ["Women's Monobob", "Two-Woman"]
+    },
+    "Skeleton": {
+      "Male": ["Men's"],
+      "Female": ["Women's"]
+    },
+    "Curling": {
+      "Male": ["Men", "Mixed Doubles"],
+      "Female": ["Women", "Mixed Doubles"]
+    },
+    "Ice hockey": {
+      "Male": ["Men's"],
+      "Female": ["Women's"]
+    },
+    "Luge": {
+      "Male": ["Men's Singles", "Men's Doubles", "Team Relay"],
+      "Female": ["Women's Singles", "Team Relay"]
+    },
+    "Figure skating": {
+      "Male": ["Men's Singles", "Pair Skating", "Ice Dance", "Team"],
+      "Female": ["Women's Singles", "Pair Skating", "Ice Dance", "Team"]
+    },
+    "Short track speed skating": {
+      "Male": [
+        "Men's 500 Metres",
+        "Men's 1000 Metres",
+        "Men's 1500 Metres",
+        "Men's 5000 Metres",
+        "Mixed 2000 Metre Relay"
+      ],
+      "Female": [
+        "Women's 500 Metres",
+        "Women's 1000 Metres",
+        "Women's 1500 Metres",
+        "Women's 3000 Metres",
+        "Mixed 2000 Metre Relay"
+      ]
+    },
+    "Speed skating": {
+      "Male": [
+        "Men's 5000 Metres",
+        "Men's 1500 Metres",
+        "Men's 10,000 Metres",
+        "Men's 500 Metres",
+        "Men's Team Pursuit",
+        "Men's 1000 Metres",
+        "Men's Mass Start"
+      ],
+      "Female": [
+        "Women's 3000 Metres",
+        "Women's 1500 Metres",
+        "Women's 5000 Metres",
+        "Women's 500 Metres",
+        "Women's Team Pursuit",
+        "Women's 1000 Metres",
+        "Women's Mass Start"
+      ]
+    },
+    "Alpine skiing": {
+      "Male": [
+        "Men's Downhill",
+        "Men's Super-G",
+        "Men's Combines",
+        "Men's Giant Slalom",
+        "Men's Slalom",
+        "Team Event"
+      ],
+      "Female": [
+        "Women's Giant Slalom",
+        "Women's Slalom",
+        "Women's Super-G",
+        "Women's Downhill",
+        "Women's Combined",
+        "Team Event"
+      ]
+    },
+    "Cross-country skiing": {
+      "Male": [
+        "Men's Skiathlon",
+        "Men's Individual Sprint Freestyle",
+        "Men's 15km Classical",
+        "Men's 4x10 km Relay",
+        "Men's Team Sprint Freestyle",
+        "Men's 50km Mass Start Freestyle"
+      ],
+      "Female": [
+        "Women's Skiathlon",
+        "Women's Individual Sprint Freestyle",
+        "Women's 10km Classical",
+        "Women's 4x5 km Relay",
+        "Women's Team Sprint Freestyle",
+        "Women's 30km Mass Start Freestyle"
+      ]
+    },
+    "Freestyle skiing": {
+      "Male": [
+        "Men's Moguls",
+        "Men's Big Air",
+        "Men's Ski Slopestyle",
+        "Men's Aerials",
+        "Men's Ski Cross",
+        "Men's Ski Halfpipe",
+        "Mixed Team Aerials"
+      ],
+      "Female": [
+        "Women's Ski Slopestyle",
+        "Women's Aerials",
+        "Women's Moguls",
+        "Women's Big Air",
+        "Women's Ski Cross",
+        "Women's Ski Halfpipe",
+        "Mixed Team Aerials"
+      ]
+    },
+    "Nordic combined": {
+      "Male": [
+        "Men's Individual Normal Hill/10km",
+        "Men's Individual Large Hill/10km",
+        "Men's Team Large Hill/4x5 km"
+      ],
+      "Female": []
+    },
+    "Ski jumping": {
+      "Male": [
+        "Men's Individual Normal Hill",
+        "Men's Individual Large Hill",
+        "Men's Team Large Hill",
+        "Mixed Team Normal Hill"
+      ],
+      "Female": ["Women's Individual Normal Hill", "Mixed Team Normal Hill"]
+    },
+    "Snowboarding": {
+      "Male": [
+        "Men's Slopestyle",
+        "Men's Parallel Giant Slalom",
+        "Men's Snowboard Cross",
+        "Men's Halfpipe",
+        "Men's Big Air",
+        "Mixed Team Snowboard Cross"
+      ],
+      "Female": [
+        "Women's Slopestyle",
+        "Women's Parallel Giant Slalom",
+        "Women's Big Air",
+        "Women's Snowboard Cross",
+        "Women's Halfpipe",
+        "Mixed Team Snowboard Cross"
+      ]
+    }
+  }
+}

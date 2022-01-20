@@ -1,21 +1,43 @@
-test = [
-    "China",
-    "Canada",
-    "ROC",
-    "Finland",
-    "Sweden",
-    "Czech Republic",
-    "United States",
-    "Germany",
-    "Switzerland",
-    "Slovakia",
-    "Latvia",
-    "Denmark",
-    "Switzerland",
-    "Japan",
-]
-test.sort()
-print(test)
+import json
+import random
+
+disciplines_file = open("metamorfan/data/disciplines.json")
+DISCIPLINES_DATA = json.load(disciplines_file)
+
+types_file = open("metamorfan/data/types.json")
+TYPES_DATA = json.load(types_file)
+
+events_file = open("metamorfan/data/events.json")
+EVENTS_DATA = json.load(events_file)
+
+
+def set_event(discipline, gender):
+    return random.choice(EVENTS_DATA["Events"][discipline][gender])
+
+
+# print(list(DISCIPLINES_DATA["Disciplines"].keys()))
+for x in range(20):
+    print(set_event("Snowboarding", "Male"))
+
+
+# test = [
+#     "China",
+#     "Canada",
+#     "ROC",
+#     "Finland",
+#     "Sweden",
+#     "Czech Republic",
+#     "United States",
+#     "Germany",
+#     "Switzerland",
+#     "Slovakia",
+#     "Latvia",
+#     "Denmark",
+#     "Switzerland",
+#     "Japan",
+# ]
+# test.sort()
+# print(test)
 
 # ---------------------------------------------------------------------------------- #
 # Loads all country flags into blender (crashes blender not sure why)

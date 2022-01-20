@@ -1,7 +1,7 @@
 {
   "Attributes": {
     "Biathlon": {
-      "Men": [
+      "Male": [
         "beanie",
         "rifle",
         "sunglasses",
@@ -10,7 +10,7 @@
         "ski.poles",
         "spandex1"
       ],
-      "Women": [
+      "Female": [
         "beanie",
         "rifle",
         "sunglasses",
@@ -21,39 +21,39 @@
       ]
     },
     "Bobsleigh": {
-      "Men": ["bobsled", "bobsled.outfit", "shield.helmet"],
-      "Women": ["bobsled", "bobsled.outfit", "shield.helmet"]
+      "Male": ["bobsled", "bobsled.outfit", "shield.helmet"],
+      "Female": ["bobsled", "bobsled.outfit", "shield.helmet"]
     },
     "Skeleton": {
-      "Men": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"],
-      "Women": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"]
+      "Male": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"],
+      "Female": ["shield.helmet", "spandex2", "skeleton.sled", "shoes"]
     },
     "Curling": {
-      "Men": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"],
-      "Women": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"]
+      "Male": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"],
+      "Female": ["curling.equipment", "curling.outfit", "baseball.cap", "shoes"]
     },
     "Ice hockey": {
-      "Men": ["black.skates", "hockey.outfit", "hockey.equipment"],
-      "Women": ["black.skates", "hockey.outfit", "hockey.equipment"]
+      "Male": ["black.skates", "hockey.outfit", "hockey.equipment"],
+      "Female": ["black.skates", "hockey.outfit", "hockey.equipment"]
     },
     "Luge": {
-      "Men": ["shield.helmet", "luge.sled", "spandex3", "shoes"],
-      "Women": ["shield.helmet", "luge.sled", "spandex3", "shoes"]
+      "Male": ["shield.helmet", "luge.sled", "spandex3", "shoes"],
+      "Female": ["shield.helmet", "luge.sled", "spandex3", "shoes"]
     },
     "Figure skating": {
-      "Men": ["ice.skates", "ice.skating.pants"],
-      "Women": ["ice.skates", "ice.skating.dress"]
+      "Male": ["ice.skates", "ice.skating.pants"],
+      "Female": ["ice.skates", "ice.skating.dress"]
     },
     "Short track speed skating": {
-      "Men": ["spandex4", "black.skates"],
-      "Women": ["spandex4", "white.skates"]
+      "Male": ["spandex4", "black.skates"],
+      "Female": ["spandex4", "white.skates"]
     },
     "Speed skating": {
-      "Men": ["spandex1", "white.skates"],
-      "Women": ["spandex1", "black.skates"]
+      "Male": ["spandex1", "white.skates"],
+      "Female": ["spandex1", "black.skates"]
     },
     "Alpine skiing": {
-      "Men": [
+      "Male": [
         "spandex2",
         "goggles",
         "mittens",
@@ -62,7 +62,7 @@
         "ski.boots",
         "ski.poles"
       ],
-      "Women": [
+      "Female": [
         "spandex2",
         "goggles",
         "mittens",
@@ -73,7 +73,7 @@
       ]
     },
     "Cross-country skiing": {
-      "Men": [
+      "Male": [
         "spandex3",
         "mittens",
         "ski",
@@ -82,7 +82,7 @@
         "beanie",
         "sunglasses"
       ],
-      "Women": [
+      "Female": [
         "spandex3",
         "mittens",
         "ski",
@@ -93,7 +93,7 @@
       ]
     },
     "Freestyle skiing": {
-      "Men": [
+      "Male": [
         "goggles",
         "mittens",
         "ski",
@@ -102,7 +102,7 @@
         "ski.poles",
         "ski.outfit"
       ],
-      "Women": [
+      "Female": [
         "goggles",
         "mittens",
         "ski",
@@ -113,7 +113,7 @@
       ]
     },
     "Nordic combined": {
-      "Men": [
+      "Male": [
         "spandex4",
         "goggles",
         "mittens",
@@ -121,7 +121,7 @@
         "ski.boots",
         "ski.helmet"
       ],
-      "Women": [
+      "Female": [
         "spandex4",
         "goggles",
         "mittens",
@@ -131,7 +131,7 @@
       ]
     },
     "Ski jumping": {
-      "Men": [
+      "Male": [
         "spandex1",
         "goggles",
         "mittens",
@@ -139,7 +139,7 @@
         "ski.boots",
         "ski.helmet"
       ],
-      "Women": [
+      "Female": [
         "spandex1",
         "goggles",
         "mittens",
@@ -149,13 +149,13 @@
       ]
     },
     "Snowboarding": {
-      "Men": [
+      "Male": [
         "goggles",
         "ski.helmet",
         "snowboard.outfit",
         "snowboarding.equipment"
       ],
-      "Women": [
+      "Female": [
         "goggles",
         "ski.helmet",
         "snowboard.outfit",

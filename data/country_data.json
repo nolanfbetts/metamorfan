@@ -209,6 +209,13 @@
     "secondary": "#DA291C",
     "accent": "#FFCD00"
   },
+  "Ghana": {
+    "alpha-2-code": "GH",
+    "alpha-3-code": "GHA",
+    "primary": "#CE1126",
+    "secondary": "#006B3F",
+    "accent": "#FCD116"
+  },
   "Great Britain": {
     "alpha-2-code": "GB",
     "alpha-3-code": "GBR",
@@ -285,6 +292,13 @@
     "primary": "#FFFFFF",
     "secondary": "#007A33",
     "accent": "#CB333B"
+  },
+  "Jamaica": {
+    "alpha-2-code": "JM",
+    "alpha-3-code": "JAM",
+    "primary": "#009B3A",
+    "secondary": "#000000",
+    "accent": "#FED100"
   },
   "Japan": {
     "alpha-2-code": "JP",
