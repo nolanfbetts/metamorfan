@@ -10,14 +10,20 @@ TYPES_DATA = json.load(types_file)
 events_file = open("metamorfan/data/events.json")
 EVENTS_DATA = json.load(events_file)
 
+attributes_file = open("metamorfan/data/attributes.json")
+ATTRIBUTES_DATA = json.load(attributes_file)
 
-def set_event(discipline, gender):
-    return random.choice(EVENTS_DATA["Events"][discipline][gender])
+
+def set_attributes(discipline, gender):
+    attr_list = ATTRIBUTES_DATA["Attributes"][discipline][gender]
+    for attr in attr_list:
+        print(attr)
+    return "(:"
 
 
 # print(list(DISCIPLINES_DATA["Disciplines"].keys()))
-for x in range(20):
-    print(set_event("Snowboarding", "Male"))
+for x in range(10):
+    print(set_attributes("Biathlon", "Female"))
 
 
 # test = [

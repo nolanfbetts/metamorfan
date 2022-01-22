@@ -2,7 +2,7 @@ import json
 import random
 import bpy
 
-# CONSTANTS
+# CONSTANTS/ DATA
 countries_file = open("metamorfan/data/country_data.json")
 COUNTRIES_DATA = json.load(countries_file)
 
@@ -17,6 +17,9 @@ HAIR_DATA = json.load(hair_file)
 
 types_file = open("metamorfan/data/types.json")
 TYPES_DATA = json.load(types_file)
+
+events_file = open("metamorfan/data/events.json")
+EVENTS_DATA = json.load(events_file)
 
 # Main OBJECT Tracker
 ACTIVE_OBJECTS = []
@@ -88,26 +91,34 @@ def set_texture_image(material, f_name):
 # ---------------------------------------------------------------------------------- #
 def position_letters(country):
     # NEED TO ADD EDGE CASE FOR REPEATING LETTER COUNTRIES
+    # Kosovo, Trinidad and Tobago
+    if(country == 'Kosovo'): 
+        ACTIVE_OBJECTS.append('xkx')
+        bpy.data.objects['xkx'].hide_render = False
+    elif(country=='Trinidad and Tobago'):
+        ACTIVE_OBJECTS.append('tto')
+        bpy.data.objects['tto'].hide_render = False
+    else:
     # get the appropriate country letters
-    alpha_3_code = COUNTRIES_DATA[country]["alpha-3-code"]
-    first, second, accent = (
-        alpha_3_code[0].lower(),
-        alpha_3_code[1].lower(),
-        alpha_3_code[2].lower(),
-    )
-    # add letters to active list
-    ACTIVE_OBJECTS.append(first)
-    ACTIVE_OBJECTS.append(second)
-    ACTIVE_OBJECTS.append(accent)
-    print(ACTIVE_OBJECTS)
-    # set objects to true for render view
-    bpy.data.objects[first].hide_render = False
-    bpy.data.objects[second].hide_render = False
-    bpy.data.objects[accent].hide_render = False
-    # position letters accordingly
-    bpy.data.objects[first].location = (-0.9, -0.7, -3.3)
-    bpy.data.objects[second].location = (0, -0.7, -3.3)
-    bpy.data.objects[accent].location = (0.9, -0.7, -3.3)
+        alpha_3_code = COUNTRIES_DATA[country]["alpha-3-code"]
+        first, second, accent = (
+            alpha_3_code[0].lower(),
+            alpha_3_code[1].lower(),
+            alpha_3_code[2].lower(),
+        )
+        # add letters to active list
+        ACTIVE_OBJECTS.append(first)
+        ACTIVE_OBJECTS.append(second)
+        ACTIVE_OBJECTS.append(accent)
+        print(ACTIVE_OBJECTS)
+        # set objects to true for render view
+        bpy.data.objects[first].hide_render = False
+        bpy.data.objects[second].hide_render = False
+        bpy.data.objects[accent].hide_render = False
+        # position letters accordingly
+        bpy.data.objects[first].location = (-0.9, -0.7, -3.3)
+        bpy.data.objects[second].location = (0, -0.7, -3.3)
+        bpy.data.objects[accent].location = (0.9, -0.7, -3.3)
     return 0
 
 
@@ -240,9 +251,33 @@ def set_hair_color():
 # Ouput: None
 # ---------------------------------------------------------------------------------- #
 def set_skin_color():
+    # need to finish (think though alien edge case)
     skin_options = list(SKIN_DATA["Skin"].keys())
     skin_color = random.choice(skin_options)
     print(skin_color, SKIN_DATA["Skin"][skin_color])
+    
+    
+# ---------------------------------------------------------------------------------- #
+# Definition: set_country
+# Purpose: set the characters country
+# Input: discipline, gender
+# Ouput: country
+# ---------------------------------------------------------------------------------- #
+def set_country(discipline, gender):
+    return random.choice(DISCIPLINES_DATA["Disciplines"][discipline][gender])
+
+# ---------------------------------------------------------------------------------- #
+# Definition: set_attributes
+# Purpose: set the characters attributes
+# Input: discipline, gender
+# Ouput: None
+# ---------------------------------------------------------------------------------- #
+def set_attributes(discipline, gender):
+    attr_list = ATTRIBUTES_DATA["Attributes"][discipline][gender]
+    for attr in attr_list:
+        ACTIVE_COLLECTIONS.append(attr)
+        bpy.data.collections[each].hide_render = False
+        
 
 
 # ---------------------------------------------------------------------------------- #
@@ -276,9 +311,12 @@ gender = set_gender()
 character_type = set_type()
 discipline = set_discipline(gender)
 event = set_event(discipline, gender)
-#country = set_country(discipline, gender))
+country = set_country(discipline, gender)
 position_letters(country)
 set_country_colors(country)
+# set_attributes(discipline, gender)
+# set_background()
+# set_easter_egg()
 set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
 set_skin_color()
 set_hair_color()
