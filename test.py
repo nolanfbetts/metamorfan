@@ -13,17 +13,28 @@ EVENTS_DATA = json.load(events_file)
 attributes_file = open("metamorfan/data/attributes.json")
 ATTRIBUTES_DATA = json.load(attributes_file)
 
+hair_file = open("metamorfan/data/hair.json")
+HAIR_DATA = json.load(hair_file)
 
-def set_attributes(discipline, gender):
-    attr_list = ATTRIBUTES_DATA["Attributes"][discipline][gender]
-    for attr in attr_list:
-        print(attr)
-    return "(:"
+
+def set_hair(gender):
+    hair_style = random.choice(HAIR_DATA["Hair"]["HairType"][gender])
+    hair_color = random.choice(list(HAIR_DATA["Hair"]["HairColor"].keys()))
+    hair_hex = HAIR_DATA["Hair"]["HairColor"][hair_color]
+    ACTIVE_OBJECTS.append(hair_style)
+    bpy.data.objects[hair_style].hide_render = False
+    hair = hex_to_rgb(hair_hex)
+    bpy.data.materials["hair"].node_tree.nodes["Principled BSDF"].inputs[
+        "Base Color"
+    ].default_value = hair
+    return hair_style, hair_color
+    # hair_color = HAIR_DATA["Attributes"][discipline][gender]
 
 
 # print(list(DISCIPLINES_DATA["Disciplines"].keys()))
 for x in range(10):
-    print(set_attributes("Biathlon", "Female"))
+    hair_style, hair_color = set_hair(gender)
+    print(hair_style, hair_color)
 
 
 # test = [

@@ -46,10 +46,10 @@
     },
     "Short track speed skating": {
       "Male": ["spandex4", "black.skates"],
-      "Female": ["spandex4", "white.skates"]
+      "Female": ["spandex4", "ice.skates"]
     },
     "Speed skating": {
-      "Male": ["spandex1", "white.skates"],
+      "Male": ["spandex1", "ice.skates"],
       "Female": ["spandex1", "black.skates"]
     },
     "Alpine skiing": {

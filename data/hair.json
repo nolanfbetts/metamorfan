@@ -1,0 +1,15 @@
+{
+  "Hair": {
+    "HairColor": {
+      "blonde": "#debe99",
+      "light-brown": "#aa8866",
+      "orange": "#9a3300",
+      "dark-brown": "#4f1a00",
+      "black": "#241c11"
+    },
+    "HairType": {
+      "Male": ["bearded", "long", "short", "bald"],
+      "Female": ["long", "ponytail", "short", "bald"]
+    }
+  }
+}

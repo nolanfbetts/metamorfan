@@ -9,10 +9,10 @@ COUNTRIES_DATA = json.load(countries_file)
 disciplines_file = open("metamorfan/data/disciplines.json")
 DISCIPLINES_DATA = json.load(disciplines_file)
 
-skin_file = open("skin_color.json")
+skin_file = open("metamorfan/data/skin_color.json")
 SKIN_DATA = json.load(skin_file)
 
-hair_file = open("hair_color.json")
+hair_file = open("metamorfan/data/hair.json")
 HAIR_DATA = json.load(hair_file)
 
 types_file = open("metamorfan/data/types.json")
@@ -20,6 +20,9 @@ TYPES_DATA = json.load(types_file)
 
 events_file = open("metamorfan/data/events.json")
 EVENTS_DATA = json.load(events_file)
+
+attributes_file = open("metamorfan/data/attributes.json")
+ATTRIBUTES_DATA = json.load(attributes_file)
 
 # Main OBJECT Tracker
 ACTIVE_OBJECTS = []
@@ -92,14 +95,14 @@ def set_texture_image(material, f_name):
 def position_letters(country):
     # NEED TO ADD EDGE CASE FOR REPEATING LETTER COUNTRIES
     # Kosovo, Trinidad and Tobago
-    if(country == 'Kosovo'): 
-        ACTIVE_OBJECTS.append('xkx')
-        bpy.data.objects['xkx'].hide_render = False
-    elif(country=='Trinidad and Tobago'):
-        ACTIVE_OBJECTS.append('tto')
-        bpy.data.objects['tto'].hide_render = False
+    if country == "Kosovo":
+        ACTIVE_OBJECTS.append("xkx")
+        bpy.data.objects["xkx"].hide_render = False
+    elif country == "Trinidad and Tobago":
+        ACTIVE_OBJECTS.append("tto")
+        bpy.data.objects["tto"].hide_render = False
     else:
-    # get the appropriate country letters
+        # get the appropriate country letters
         alpha_3_code = COUNTRIES_DATA[country]["alpha-3-code"]
         first, second, accent = (
             alpha_3_code[0].lower(),
@@ -110,7 +113,6 @@ def position_letters(country):
         ACTIVE_OBJECTS.append(first)
         ACTIVE_OBJECTS.append(second)
         ACTIVE_OBJECTS.append(accent)
-        print(ACTIVE_OBJECTS)
         # set objects to true for render view
         bpy.data.objects[first].hide_render = False
         bpy.data.objects[second].hide_render = False
@@ -129,16 +131,16 @@ def position_letters(country):
 # Ouput: Male or Female
 # ---------------------------------------------------------------------------------- #
 def set_gender():
-    gender = random.randrange(0, 2, 1))
-    if(gender==0):
+    gender = random.randrange(0, 2, 1)
+    if gender == 0:
         return "Male"
     else:
         return "Female"
-    
-    
+
+
 # ---------------------------------------------------------------------------------- #
 # Definition: set_type
-# Purpose: set the type of the character 
+# Purpose: set the type of the character
 # 80% Human
 # 10% Robotic
 # 10% Extraterrestrial
@@ -193,14 +195,14 @@ def set_discipline(gender):
         return "Ski jumping"
     else:
         return "Snowboarding"
-    
-    
+
+
 # ---------------------------------------------------------------------------------- #
 # Definition: set_event
-# Purpose: set the event 
+# Purpose: set the event
 # Input: discipline, gender
 # Ouput: an random choice event
-# ---------------------------------------------------------------------------------- #  
+# ---------------------------------------------------------------------------------- #
 def set_event(discipline, gender):
     return random.choice(EVENTS_DATA["Events"][discipline][gender])
 
@@ -229,19 +231,22 @@ def set_country_colors(country):
 
 
 # ---------------------------------------------------------------------------------- #
-# Definition: set_hair_color
-# Purpose: set the character hair color
-# Input: None
-# Ouput: None
+# Definition: set_hair
+# Purpose: set the character hair and color
+# Input: gender
+# Ouput: hair_style, hair_color
 # ---------------------------------------------------------------------------------- #
-def set_hair_color():
-    hair_options = list(HAIR_DATA["Hair"].keys())
-    hair_color = random.choice(hair_options)
-    print(hair_color, HAIR_DATA["Hair"][hair_color])
-    hair_rgb = hex_to_rgb(HAIR_DATA["Hair"][hair_color])
+def set_hair(gender):
+    hair_style = random.choice(HAIR_DATA["Hair"]["HairType"][gender])
+    hair_color = random.choice(list(HAIR_DATA["Hair"]["HairColor"].keys()))
+    hair_hex = HAIR_DATA["Hair"]["HairColor"][hair_color]
+    ACTIVE_OBJECTS.append(hair_style)
+    bpy.data.objects[hair_style].hide_render = False
+    hair = hex_to_rgb(hair_hex)
     bpy.data.materials["hair"].node_tree.nodes["Principled BSDF"].inputs[
         "Base Color"
-    ].default_value = hair_rgb
+    ].default_value = hair
+    return hair_style, hair_color
 
 
 # ---------------------------------------------------------------------------------- #
@@ -255,8 +260,8 @@ def set_skin_color():
     skin_options = list(SKIN_DATA["Skin"].keys())
     skin_color = random.choice(skin_options)
     print(skin_color, SKIN_DATA["Skin"][skin_color])
-    
-    
+
+
 # ---------------------------------------------------------------------------------- #
 # Definition: set_country
 # Purpose: set the characters country
@@ -265,6 +270,7 @@ def set_skin_color():
 # ---------------------------------------------------------------------------------- #
 def set_country(discipline, gender):
     return random.choice(DISCIPLINES_DATA["Disciplines"][discipline][gender])
+
 
 # ---------------------------------------------------------------------------------- #
 # Definition: set_attributes
@@ -276,8 +282,7 @@ def set_attributes(discipline, gender):
     attr_list = ATTRIBUTES_DATA["Attributes"][discipline][gender]
     for attr in attr_list:
         ACTIVE_COLLECTIONS.append(attr)
-        bpy.data.collections[each].hide_render = False
-        
+        bpy.data.collections[attr].hide_render = False
 
 
 # ---------------------------------------------------------------------------------- #
@@ -306,20 +311,33 @@ def reset_scene():
         bpy.data.objects[obj].hide_render = True
     for col in ACTIVE_COLLECTIONS:
         bpy.data.collections[col].hide_render = True
+    ACTIVE_OBJECTS.clear()
+    ACTIVE_COLLECTIONS.clear()
 
-gender = set_gender()
-character_type = set_type()
-discipline = set_discipline(gender)
-event = set_event(discipline, gender)
-country = set_country(discipline, gender)
-position_letters(country)
-set_country_colors(country)
+
 # set_attributes(discipline, gender)
 # set_background()
 # set_easter_egg()
-set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
-set_skin_color()
-set_hair_color()
+# set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
+# set_skin_color()
 # build_json()
-render_nft("1")
-reset_scene()
+# render_nft("1")
+# reset_scene()
+
+for x in range(10):
+    gender = set_gender()
+    character_type = set_type()
+    discipline = set_discipline(gender)
+    event = set_event(discipline, gender)
+    country = set_country(discipline, gender)
+    position_letters(country)
+    set_country_colors(country)
+    hair_style, hair_color = set_hair(gender)
+    set_attributes(discipline, gender)
+    set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
+    output = "Number: {}, Gender: {}, Discipline: {}, Event: {}, Country: {}".format(
+        x, gender, discipline, event, country
+    )
+    print(output)
+    render_nft(str(x))
+    reset_scene()
