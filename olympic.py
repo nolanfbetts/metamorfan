@@ -141,20 +141,43 @@ def set_gender():
 # ---------------------------------------------------------------------------------- #
 # Definition: set_type
 # Purpose: set the type of the character
-# 80% Human
+# 75% Human
 # 10% Robotic
 # 10% Extraterrestrial
+# 5% Snowman
 # Input: None
 # Ouput: Human, Robotic, Extraterrestrial
 # ---------------------------------------------------------------------------------- #
 def set_type():
-    t = random.randrange(0, 10, 1)
-    if t in range(0, 8):
+    t = random.randrange(0, 20, 1)
+    if t in range(0, 15):
+        bpy.data.objects["eye"].hide_render = False
         return "Human"
-    elif t == 8:
+    elif t in range(15, 17):
+        bpy.data.objects["eye"].hide_render = False
+        ACTIVE_COLLECTIONS.append("cyborg.face")
+        bpy.data.collections["cyborg.face"].hide_render = False
         return "Robotic"
-    else:
+    elif t in range(17, 19):
+        bpy.data.objects["eye"].hide_render = True
+        skin_hex = SKIN_DATA["Alien"]["green"]
+        skin = hex_to_rgb(skin_hex)
+        bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
+            "Base Color"
+        ].default_value = skin
+        ACTIVE_COLLECTIONS.append("alien.face")
+        bpy.data.collections["alien.face"].hide_render = False
         return "Extraterrestrial"
+    else:
+        bpy.data.objects["eye"].hide_render = True
+        skin_hex = SKIN_DATA["Snowman"]["snow"]
+        skin = hex_to_rgb(skin_hex)
+        bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
+            "Base Color"
+        ].default_value = skin
+        ACTIVE_COLLECTIONS.append("snowman.face")
+        bpy.data.collections["snowman.face"].hide_render = False
+        return "Snowman"
 
 
 # ---------------------------------------------------------------------------------- #
@@ -253,13 +276,16 @@ def set_hair(gender):
 # Definition: set_skin_color
 # Purpose: set the character hair color
 # Input: None
-# Ouput: None
+# Ouput: skin_color
 # ---------------------------------------------------------------------------------- #
 def set_skin_color():
-    # need to finish (think though alien edge case)
-    skin_options = list(SKIN_DATA["Skin"].keys())
-    skin_color = random.choice(skin_options)
-    print(skin_color, SKIN_DATA["Skin"][skin_color])
+    skin_color = random.choice(list(SKIN_DATA["Skin"].keys()))
+    skin_hex = SKIN_DATA["Skin"][skin_color]
+    skin = hex_to_rgb(skin_hex)
+    bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
+        "Base Color"
+    ].default_value = skin
+    return skin_color
 
 
 # ---------------------------------------------------------------------------------- #
@@ -333,10 +359,16 @@ for x in range(10):
     position_letters(country)
     set_country_colors(country)
     hair_style, hair_color = set_hair(gender)
+    if character_type == "Extraterrestrial":
+        skin_color = "green"
+    elif character_type == "Snowman":
+        skin_color = "snow"
+    else:
+        skin_color = set_skin_color()
     set_attributes(discipline, gender)
     set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
-    output = "Number: {}, Gender: {}, Discipline: {}, Event: {}, Country: {}".format(
-        x, gender, discipline, event, country
+    output = "Number: {}, Gender: {}, Character Type: {}, Discipline: {}, Event: {}, Country: {}".format(
+        x, gender, character_type, discipline, event, country
     )
     print(output)
     render_nft(str(x))

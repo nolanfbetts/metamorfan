@@ -1,10 +1,15 @@
 {
   "Skin": {
-    "alien": "#3CD070",
     "light": "#FFDBAC",
     "light-medium": "#F1C27D",
     "medium": "#E0AC69",
     "medium-dark": "#C68642",
     "dark": "#8D5524"
+  },
+  "Alien": {
+    "green": "#3CD070"
+  },
+  "Snowman": {
+    "snow": "#FFFFFF"
   }
 }

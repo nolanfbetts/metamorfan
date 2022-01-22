@@ -16,25 +16,46 @@ ATTRIBUTES_DATA = json.load(attributes_file)
 hair_file = open("metamorfan/data/hair.json")
 HAIR_DATA = json.load(hair_file)
 
+skin_file = open("metamorfan/data/skin_color.json")
+SKIN_DATA = json.load(skin_file)
 
-def set_hair(gender):
-    hair_style = random.choice(HAIR_DATA["Hair"]["HairType"][gender])
-    hair_color = random.choice(list(HAIR_DATA["Hair"]["HairColor"].keys()))
-    hair_hex = HAIR_DATA["Hair"]["HairColor"][hair_color]
-    ACTIVE_OBJECTS.append(hair_style)
-    bpy.data.objects[hair_style].hide_render = False
-    hair = hex_to_rgb(hair_hex)
-    bpy.data.materials["hair"].node_tree.nodes["Principled BSDF"].inputs[
-        "Base Color"
-    ].default_value = hair
-    return hair_style, hair_color
+
+def set_type():
+    t = random.randrange(0, 20, 1)
+    if t in range(0, 15):
+        bpy.data.objects["eye"].hide_render = False
+        return "Human"
+    elif t in range(15, 17):
+        bpy.data.objects["eye"].hide_render = False
+        ACTIVE_COLLECTIONS.append("cyborg.face")
+        bpy.data.objects["cyborg.face"].hide_render = False
+        return "Robotic"
+    elif t in range(17, 19):
+        bpy.data.objects["eye"].hide_render = True
+        skin_hex = SKIN_DATA["Alien"]["green"]
+        skin = hex_to_rgb(skin_hex)
+            bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
+                "Base Color"
+            ].default_value = skin
+        ACTIVE_COLLECTIONS.append("alien.face")
+        bpy.data.objects["alien.face"].hide_render = False
+        return "Extraterrestrial"
+    else:
+        bpy.data.objects["eye"].hide_render = True
+        skin_hex = SKIN_DATA["Snowman"]["white"]
+        skin = hex_to_rgb(skin_hex)
+            bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
+                "Base Color"
+            ].default_value = skin
+        ACTIVE_COLLECTIONS.append("snowman.face")
+        bpy.data.objects["snowman.face"].hide_render = False
+        return "Snowman"
     # hair_color = HAIR_DATA["Attributes"][discipline][gender]
 
 
 # print(list(DISCIPLINES_DATA["Disciplines"].keys()))
-for x in range(10):
-    hair_style, hair_color = set_hair(gender)
-    print(hair_style, hair_color)
+for x in range(100):
+    print(set_type())
 
 
 # test = [
