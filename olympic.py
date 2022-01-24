@@ -398,15 +398,6 @@ def reset_scene():
     ACTIVE_COLLECTIONS.clear()
 
 
-# set_attributes(discipline, gender)
-# set_background()
-# set_easter_egg()
-# set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
-# set_skin_color()
-# build_json()
-# render_nft("1")
-# reset_scene()
-
 for x in range(10):
     gender = set_gender()
     character_type = set_type()
@@ -445,5 +436,4 @@ for x in range(10):
     reset_scene()
 
     # easter eggs
-    # JSON files
     # color fixes
