@@ -221,6 +221,26 @@ def set_discipline(gender):
 
 
 # ---------------------------------------------------------------------------------- #
+# Definition: set_background
+# Purpose: set the background
+# Input: None
+# Ouput: Flag, Mountains, or Snowday
+# ---------------------------------------------------------------------------------- #
+def set_background():
+    b = random.randrange(0, 10, 1)
+    if b in range(0, 7):
+        return "Flag"
+    elif b in range(7, 9):
+        ACTIVE_COLLECTIONS.append("background.mountains")
+        bpy.data.collections["background.mountains"].hide_render = False
+        return "Mountains"
+    else:
+        ACTIVE_COLLECTIONS.append("snowy.day")
+        bpy.data.collections["snowy.day"].hide_render = False
+        return "Snowday"
+
+
+# ---------------------------------------------------------------------------------- #
 # Definition: set_event
 # Purpose: set the event
 # Input: discipline, gender
@@ -350,9 +370,10 @@ def reset_scene():
 # render_nft("1")
 # reset_scene()
 
-for x in range(10):
+for x in range(100):
     gender = set_gender()
     character_type = set_type()
+    background = set_background()
     discipline = set_discipline(gender)
     event = set_event(discipline, gender)
     country = set_country(discipline, gender)
@@ -373,3 +394,7 @@ for x in range(10):
     print(output)
     render_nft(str(x))
     reset_scene()
+
+    # easter eggs
+    # JSON files
+    # color fixes

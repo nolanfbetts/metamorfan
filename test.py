@@ -20,42 +20,23 @@ skin_file = open("metamorfan/data/skin_color.json")
 SKIN_DATA = json.load(skin_file)
 
 
-def set_type():
-    t = random.randrange(0, 20, 1)
-    if t in range(0, 15):
-        bpy.data.objects["eye"].hide_render = False
-        return "Human"
-    elif t in range(15, 17):
-        bpy.data.objects["eye"].hide_render = False
-        ACTIVE_COLLECTIONS.append("cyborg.face")
-        bpy.data.objects["cyborg.face"].hide_render = False
-        return "Robotic"
-    elif t in range(17, 19):
-        bpy.data.objects["eye"].hide_render = True
-        skin_hex = SKIN_DATA["Alien"]["green"]
-        skin = hex_to_rgb(skin_hex)
-            bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
-                "Base Color"
-            ].default_value = skin
-        ACTIVE_COLLECTIONS.append("alien.face")
-        bpy.data.objects["alien.face"].hide_render = False
-        return "Extraterrestrial"
+def set_background():
+    b = random.randrange(0, 10, 1)
+    if b in range(0, 7):
+        return "Flag"
+    elif b in range(7, 9):
+        ACTIVE_COLLECTIONS.append("background.mountains")
+        bpy.data.collections["background.mountains"].hide_render = False
+        return "Mountains"
     else:
-        bpy.data.objects["eye"].hide_render = True
-        skin_hex = SKIN_DATA["Snowman"]["white"]
-        skin = hex_to_rgb(skin_hex)
-            bpy.data.materials["skin"].node_tree.nodes["Principled BSDF"].inputs[
-                "Base Color"
-            ].default_value = skin
-        ACTIVE_COLLECTIONS.append("snowman.face")
-        bpy.data.objects["snowman.face"].hide_render = False
-        return "Snowman"
-    # hair_color = HAIR_DATA["Attributes"][discipline][gender]
+        ACTIVE_COLLECTIONS.append("snowy.day")
+        bpy.data.collections["snowy.day"].hide_render = False
+        return "Snowday"
 
 
 # print(list(DISCIPLINES_DATA["Disciplines"].keys()))
 for x in range(100):
-    print(set_type())
+    print(set_background())
 
 
 # test = [
