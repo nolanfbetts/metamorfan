@@ -24,11 +24,28 @@ EVENTS_DATA = json.load(events_file)
 attributes_file = open("metamorfan/data/attributes.json")
 ATTRIBUTES_DATA = json.load(attributes_file)
 
+
 # Main OBJECT Tracker
 ACTIVE_OBJECTS = []
 
 # Main COLLECTIONS Tracker
 ACTIVE_COLLECTIONS = []
+
+# Base JSON file
+BASE_JSON = {
+    "name": "",
+    "symbol": "MFAN",
+    "description": "Each of these 3200 Metamorfans has a chance to win! Welcome aboard!",
+    "image": "image.png",
+    "seller_fee_basis_points": 500,
+    "attributes": [],
+    "properties": {
+        "creators": [
+            {"address": "AfabEY9MxXDWJQM4vAn8CLdCLEMzVK8o89CiMq5gGDkU", "share": 100}
+        ],
+        "files": [{"uri": "image.png", "type": "image/png"}],
+    },
+}
 
 # ---------------------------------------------------------------------------------- #
 # Definition: srgb_to_linearrgb
@@ -332,6 +349,26 @@ def set_attributes(discipline, gender):
 
 
 # ---------------------------------------------------------------------------------- #
+# Definition: build_json
+# Purpose: build the meta data for the NFT
+# Input: number, attributes list
+# Ouput: NFT# completed
+# ---------------------------------------------------------------------------------- #
+def build_json(number, attributes):
+    meta_data = BASE_JSON
+    meta_data["name"] = "Metamorfans #" + str(number)
+    meta_data["attributes"] = attributes
+    json_path = (
+        "/Users/nolanbetts/Blender/renders/metamorfan/final/" + str(number) + ".json"
+    )
+    json_string = json.dumps(meta_data, indent=2)
+    json_file = open(json_path, "w")
+    json_file.write(json_string)
+    json_file.close()
+    return str(number) + " complete"
+
+
+# ---------------------------------------------------------------------------------- #
 # Definition: render_nft
 # Purpose: render the NFT as a PNG
 # Input: number
@@ -370,7 +407,7 @@ def reset_scene():
 # render_nft("1")
 # reset_scene()
 
-for x in range(100):
+for x in range(10):
     gender = set_gender()
     character_type = set_type()
     background = set_background()
@@ -388,10 +425,22 @@ for x in range(100):
         skin_color = set_skin_color()
     set_attributes(discipline, gender)
     set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
-    output = "Number: {}, Gender: {}, Character Type: {}, Discipline: {}, Event: {}, Country: {}".format(
-        x, gender, character_type, discipline, event, country
-    )
-    print(output)
+
+    attr = [
+        {"trait_type": "Gender", "value": gender},
+        {"trait_type": "Type", "value": character_type},
+        {"trait_type": "Country", "value": country},
+        {"trait_type": "Discipline", "value": discipline},
+        {"trait_type": "Event", "value": event},
+        {"trait_type": "Skin", "value": skin_color},
+        {"trait_type": "Hair", "value": hair_style},
+        {"trait_type": "Hair Color", "value": hair_color},
+        {"trait_type": "Background", "value": background},
+        {"trait_type": "Extra", "value": "None"},
+        {"trait_type": "Score", "value": 0},
+    ]
+    print(attr)
+    build_json(x, attr)
     render_nft(str(x))
     reset_scene()
 

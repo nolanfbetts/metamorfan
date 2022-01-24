@@ -19,6 +19,21 @@ HAIR_DATA = json.load(hair_file)
 skin_file = open("metamorfan/data/skin_color.json")
 SKIN_DATA = json.load(skin_file)
 
+BASE_JSON = {
+    "name": "",
+    "symbol": "MFAN",
+    "description": "Each of these 3200 Metamorfans has a chance to win! Welcome aboard!",
+    "image": "image.png",
+    "seller_fee_basis_points": 500,
+    "attributes": [],
+    "properties": {
+        "creators": [
+            {"address": "AfabEY9MxXDWJQM4vAn8CLdCLEMzVK8o89CiMq5gGDkU", "share": 100}
+        ],
+        "files": [{"uri": "image.png", "type": "image/png"}],
+    },
+}
+
 
 def set_background():
     b = random.randrange(0, 10, 1)
@@ -34,9 +49,38 @@ def set_background():
         return "Snowday"
 
 
+def build_json(count, attributes):
+    meta_data = BASE_JSON
+    meta_data["name"] = "Metamorfans #" + str(count)
+    meta_data["attributes"] = attributes
+    json_path = (
+        "/Users/nolanbetts/Blender/renders/metamorfan/final/" + str(count) + ".json"
+    )
+    json_string = json.dumps(meta_data, indent=2)
+    json_file = open(json_path, "w")
+    json_file.write(json_string)
+    json_file.close()
+    return str(count) + " complete"
+
+
 # print(list(DISCIPLINES_DATA["Disciplines"].keys()))
-for x in range(100):
-    print(set_background())
+# for x in range(100):
+#     print(set_background())
+attr = [
+    {"trait_type": "Gender", "value": "Male"},
+    {"trait_type": "Type", "value": "Human"},
+    {"trait_type": "Country", "value": "USA"},
+    {"trait_type": "Discipline", "value": "Hockey"},
+    {"trait_type": "Event", "value": "Men's"},
+    {"trait_type": "Skin", "value": "Light"},
+    {"trait_type": "Hair", "value": "Short"},
+    {"trait_type": "Hair Color", "value": "Blonde"},
+    {"trait_type": "Background", "value": "Flag"},
+    {"trait_type": "Extra", "value": "None"},
+    {"trait_type": "Score", "value": 0},
+]
+
+print(build_json(10, attr))
 
 
 # test = [
