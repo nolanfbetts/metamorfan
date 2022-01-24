@@ -398,6 +398,9 @@ def reset_scene():
     ACTIVE_COLLECTIONS.clear()
 
 
+# ---------------------------------------------------------------------------------- #
+# RENDER LOOP: Makes all of the NFTs calling above definitions
+# ---------------------------------------------------------------------------------- #
 for x in range(10):
     gender = set_gender()
     character_type = set_type()
