@@ -39,7 +39,7 @@
     "alpha-3-code": "AUT",
     "primary": "#EF3340",
     "secondary": "#FFFFFF",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Azerbaijan": {
     "alpha-2-code": "AZ",
@@ -95,7 +95,7 @@
     "alpha-3-code": "CAN",
     "primary": "#EF3340",
     "secondary": "#FFFFFF",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Chile": {
     "alpha-2-code": "CL",
@@ -151,7 +151,7 @@
     "alpha-3-code": "DNK",
     "primary": "#FFFFFF",
     "secondary": "#DA291C",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "East Timor": {
     "alpha-2-code": "TL",
@@ -186,7 +186,7 @@
     "alpha-3-code": "FIN",
     "primary": "#FFFFFF",
     "secondary": "#002F6C",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "France": {
     "alpha-2-code": "FR",
@@ -200,7 +200,7 @@
     "alpha-3-code": "GEO",
     "primary": "#FFFFFF",
     "secondary": "#DA291C",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Germany": {
     "alpha-2-code": "DE",
@@ -228,7 +228,7 @@
     "alpha-3-code": "GRC",
     "primary": "#FFFFFF",
     "secondary": "#0D5EAF",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Haiti": {
     "alpha-2-code": "HT",
@@ -242,7 +242,7 @@
     "alpha-3-code": "HKG",
     "primary": "#EE1D24",
     "secondary": "#FFFFFF",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Hungary": {
     "alpha-2-code": "HU",
@@ -283,7 +283,7 @@
     "alpha-2-code": "IL",
     "alpha-3-code": "ISR",
     "primary": "#FFFFFF",
-    "secondary": "#FFFFFF",
+    "secondary": "#999999",
     "accent": "#005EB8"
   },
   "Italy": {
@@ -303,9 +303,9 @@
   "Japan": {
     "alpha-2-code": "JP",
     "alpha-3-code": "JPN",
-    "primary": "#FFFFFF",
-    "secondary": "#FFFFFF",
-    "accent": "#EF3340"
+    "primary": "#EF3340",
+    "secondary": "#999999",
+    "accent": "#FFFFFF"
   },
   "Kazakhstan": {
     "alpha-2-code": "KZ",
@@ -340,7 +340,7 @@
     "alpha-3-code": "LVA",
     "primary": "#FFFFFF",
     "secondary": "#A4343A",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Lebanon": {
     "alpha-2-code": "LB",
@@ -409,15 +409,15 @@
     "alpha-2-code": "MC",
     "alpha-3-code": "MCO",
     "primary": "#C8102E",
-    "secondary": "#C8102E",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "Mongolia": {
     "alpha-2-code": "MN",
     "alpha-3-code": "MNG",
     "primary": "#FFD100",
-    "secondary": "#62B5E5",
-    "accent": "#DA291C"
+    "secondary": "#DA291C",
+    "accent": "#62B5E5"
   },
   "Montenegro": {
     "alpha-2-code": "ME",
@@ -451,14 +451,14 @@
     "alpha-2-code": "NG",
     "alpha-3-code": "NGA",
     "primary": "#009639",
-    "secondary": "#009639",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "North Macedonia": {
     "alpha-2-code": "MK",
     "alpha-3-code": "MKD",
     "primary": "#D20000",
-    "secondary": "#D20000",
+    "secondary": "#999999",
     "accent": "#FFE600"
   },
   "Norway": {
@@ -472,36 +472,36 @@
     "alpha-2-code": "PK",
     "alpha-3-code": "PAK",
     "primary": "#FFFFFF",
-    "secondary": "#FFFFFF",
+    "secondary": "#999999",
     "accent": "#115740"
   },
   "Peru": {
     "alpha-2-code": "PE",
     "alpha-3-code": "PER",
     "primary": "#C8102E",
-    "secondary": "#C8102E",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "Philippines": {
     "alpha-2-code": "PH",
     "alpha-3-code": "PHL",
     "primary": "#FFFFFF",
-    "secondary": "#0033A0",
-    "accent": "#BF0D3E"
+    "secondary": "#BF0D3E",
+    "accent": "#0033A0"
   },
   "Poland": {
     "alpha-2-code": "PL",
     "alpha-3-code": "POL",
     "primary": "#FFFFFF",
     "secondary": "#D22630",
-    "accent": "#D22630"
+    "accent": "#999999"
   },
   "Portugal": {
     "alpha-2-code": "PT",
     "alpha-3-code": "PRT",
     "primary": "#FFFFFF",
-    "secondary": "#046A38",
-    "accent": "#DA291C"
+    "secondary": "#DA291C",
+    "accent": "#046A38"
   },
   "Puerto Rico": {
     "alpha-2-code": "PR",
@@ -514,8 +514,8 @@
     "alpha-2-code": "RU",
     "alpha-3-code": "ROC",
     "primary": "#FFFFFF",
-    "secondary": "#0072CE",
-    "accent": "#EF3340"
+    "secondary": "#EF3340",
+    "accent": "#0072CE"
   },
   "Romania": {
     "alpha-2-code": "RO",
@@ -528,14 +528,14 @@
     "alpha-2-code": "SM",
     "alpha-3-code": "SMR",
     "primary": "#9BCBEB",
-    "secondary": "#9BCBEB",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "Saudi Arabia": {
     "alpha-2-code": "SA",
     "alpha-3-code": "SAU",
     "primary": "#009639",
-    "secondary": "#009639",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "Serbia": {
@@ -585,14 +585,14 @@
     "alpha-3-code": "CHE",
     "primary": "#FFFFFF",
     "secondary": "#DA291C",
-    "accent": "#FFFFFF"
+    "accent": "#999999"
   },
   "Thailand": {
     "alpha-2-code": "TH",
     "alpha-3-code": "THA",
     "primary": "#00205B",
-    "secondary": "#FFFFFF",
-    "accent": "#EF3340"
+    "secondary": "#EF3340",
+    "accent": "#FFFFFF"
   },
   "Trinidad and Tobago": {
     "alpha-2-code": "TT",
@@ -605,14 +605,14 @@
     "alpha-2-code": "TR",
     "alpha-3-code": "TUR",
     "primary": "#C8102E",
-    "secondary": "#C8102E",
+    "secondary": "#999999",
     "accent": "#FFFFFF"
   },
   "Ukraine": {
     "alpha-2-code": "UA",
     "alpha-3-code": "UKR",
     "primary": "#FFD700",
-    "secondary": "#FFD700",
+    "secondary": "#999999",
     "accent": "#0057B8"
   },
   "United States": {

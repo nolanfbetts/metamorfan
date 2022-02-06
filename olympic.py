@@ -35,7 +35,7 @@ ACTIVE_COLLECTIONS = []
 BASE_JSON = {
     "name": "",
     "symbol": "MFAN",
-    "description": "Each of these 3200 Metamorfans has a chance to win! Welcome aboard!",
+    "description": "Each of these 3333 Metamorfans has a chance to win! Welcome aboard!",
     "image": "image.png",
     "seller_fee_basis_points": 500,
     "attributes": [],
@@ -73,7 +73,10 @@ def hex_to_rgb(hex_input, alpha=1):
     r = (h & 0xFF0000) >> 16
     g = (h & 0x00FF00) >> 8
     b = h & 0x0000FF
-    return tuple([srgb_to_linearrgb(c / 0xFF) for c in (r, g, b)] + [alpha])
+    if alpha == 0:
+        return tuple([srgb_to_linearrgb(c / 0xFF) for c in (r, g, b)])
+    else:
+        return tuple([srgb_to_linearrgb(c / 0xFF) for c in (r, g, b)] + [alpha])
 
 
 # ---------------------------------------------------------------------------------- #
@@ -241,12 +244,21 @@ def set_discipline(gender):
 # Definition: set_background
 # Purpose: set the background
 # Input: None
-# Ouput: Flag, Mountains, or Snowday
+# Ouput: Lights, Mountains, or Snowday
 # ---------------------------------------------------------------------------------- #
-def set_background():
+def set_background(country):
+    primary = hex_to_rgb(COUNTRIES_DATA[country]["primary"], 0)
+    seconday = hex_to_rgb(COUNTRIES_DATA[country]["secondary"], 0)
+    accent = hex_to_rgb(COUNTRIES_DATA[country]["accent"], 0)
+    bpy.data.objects["primary_spot"].data.color = primary
+    bpy.data.objects["primary_spot_2"].data.color = primary
+    bpy.data.objects["secondary_spot"].data.color = seconday
+    bpy.data.objects["secondary_spot_2"].data.color = seconday
+    bpy.data.objects["accent_spot"].data.color = accent
+    bpy.data.objects["accent_spot_2"].data.color = accent
     b = random.randrange(0, 10, 1)
     if b in range(0, 7):
-        return "Flag"
+        return "Lights"
     elif b in range(7, 9):
         ACTIVE_COLLECTIONS.append("background.mountains")
         bpy.data.collections["background.mountains"].hide_render = False
@@ -401,13 +413,13 @@ def reset_scene():
 # ---------------------------------------------------------------------------------- #
 # RENDER LOOP: Makes all of the NFTs calling above definitions
 # ---------------------------------------------------------------------------------- #
-for x in range(10):
+for x in range(100):
     gender = set_gender()
     character_type = set_type()
-    background = set_background()
     discipline = set_discipline(gender)
     event = set_event(discipline, gender)
     country = set_country(discipline, gender)
+    background = set_background(country)
     position_letters(country)
     set_country_colors(country)
     hair_style, hair_color = set_hair(gender)
@@ -418,7 +430,6 @@ for x in range(10):
     else:
         skin_color = set_skin_color()
     set_attributes(discipline, gender)
-    set_texture_image("flag", COUNTRIES_DATA[country]["alpha-2-code"].lower() + ".png")
 
     attr = [
         {"trait_type": "Gender", "value": gender},
@@ -434,8 +445,8 @@ for x in range(10):
         {"trait_type": "Score", "value": 0},
     ]
     print(attr)
-    build_json(x, attr)
     render_nft(str(x))
+    print(build_json(x, attr))
     reset_scene()
 
     # easter eggs
